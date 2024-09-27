@@ -9,9 +9,10 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
+# Define Google Sheets scope and placeholder for your Spreadsheet ID and input range
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
-SPREADSHEET_ID = "1Y-_X0Hl2Ij7_FYc2Ai64AbhP002Oz9MfKVfxXjuHo7c"
-RANGE_NAME = "Sheet1!B1"  #Input Ticker
+SPREADSHEET_ID = "your_spreadsheet_id_here"  # Replace with your spreadsheet ID
+RANGE_NAME = "Sheet1!B1"  # Input Ticker
 
 def main():
     credentials = None
@@ -21,7 +22,7 @@ def main():
         if credentials and credentials.expired and credentials.refresh_token:
             credentials.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file("/Users/bhargavap/financialtoolsproj/credentials.json", SCOPES)
+            flow = InstalledAppFlow.from_client_secrets_file("path_to_your_credentials.json", SCOPES)  # Replace with your path
             credentials = flow.run_local_server(port=0)
             with open("token.json", "w") as token:
                 token.write(credentials.to_json())
@@ -33,7 +34,7 @@ def main():
         # Read the ticker from the Google Sheet
         result = sheets.values().get(spreadsheetId=SPREADSHEET_ID, range=RANGE_NAME).execute()
         inputTicker = result.get('values', [[None]])[0][0]  # Safely extracting the ticker value
-        
+
         if not inputTicker:
             print("Ticker not found in the spreadsheet.")
             return
@@ -46,19 +47,19 @@ def main():
             print(f"{key}: {value}")
 
         # Update spreadsheet with financial data
-        sheets.values().update(spreadsheetId = SPREADSHEET_ID, range = "Sheet1!B3", valueInputOption = "USER_ENTERED", body ={"values": [[data["Interest Expense (Latest Year)"]]]}).execute()
-        sheets.values().update(spreadsheetId = SPREADSHEET_ID, range = "Sheet1!B4", valueInputOption = "USER_ENTERED", body ={"values": [[data["Total Debt (Latest Year)"]]]}).execute()
-        sheets.values().update(spreadsheetId = SPREADSHEET_ID, range = "Sheet1!B6", valueInputOption = "USER_ENTERED", body ={"values": [[data["Tax Provision (Latest Year)"]]]}).execute()
-        sheets.values().update(spreadsheetId = SPREADSHEET_ID, range = "Sheet1!B7", valueInputOption = "USER_ENTERED", body ={"values": [[data["Pretax Income (Latest Year)"]]]}).execute()
-        sheets.values().update(spreadsheetId = SPREADSHEET_ID, range = "Sheet1!B9", valueInputOption = "USER_ENTERED", body ={"values": [[data["Treasury Yield"]]]}).execute()
-        sheets.values().update(spreadsheetId = SPREADSHEET_ID, range = "Sheet1!B10", valueInputOption = "USER_ENTERED", body ={"values": [[data["Beta"]]]}).execute()
-        sheets.values().update(spreadsheetId = SPREADSHEET_ID, range = "Sheet1!B13", valueInputOption = "USER_ENTERED", body ={"values": [[data["Market Capitalization"]]]}).execute()
-        sheets.values().update(spreadsheetId = SPREADSHEET_ID, range = "Sheet1!C17", valueInputOption = "USER_ENTERED", body ={"values": [[data["Shares Outstanding"]]]}).execute()
-        sheets.values().update(spreadsheetId = SPREADSHEET_ID, range = "Sheet1!D3", valueInputOption = "USER_ENTERED", body={"values": [[data["Last 4 Years of Free Cash Flow"][3]]]}).execute()
-        sheets.values().update(spreadsheetId = SPREADSHEET_ID, range = "Sheet1!D4", valueInputOption = "USER_ENTERED", body={"values": [[data["Last 4 Years of Free Cash Flow"][2]]]}).execute()
-        sheets.values().update(spreadsheetId = SPREADSHEET_ID, range = "Sheet1!D5", valueInputOption = "USER_ENTERED", body={"values": [[data["Last 4 Years of Free Cash Flow"][1]]]}).execute()
-        sheets.values().update(spreadsheetId = SPREADSHEET_ID, range = "Sheet1!D6", valueInputOption = "USER_ENTERED", body={"values": [[data["Last 4 Years of Free Cash Flow"][0]]]}).execute()
-        sheets.values().update(spreadsheetId = SPREADSHEET_ID, range = "Sheet1!C20", valueInputOption = "USER_ENTERED", body={"values": [[data["Current Price"]]]}).execute()
+        sheets.values().update(spreadsheetId=SPREADSHEET_ID, range="Sheet1!B3", valueInputOption="USER_ENTERED", body={"values": [[data["Interest Expense (Latest Year)"]]]}).execute()
+        sheets.values().update(spreadsheetId=SPREADSHEET_ID, range="Sheet1!B4", valueInputOption="USER_ENTERED", body={"values": [[data["Total Debt (Latest Year)"]]]}).execute()
+        sheets.values().update(spreadsheetId=SPREADSHEET_ID, range="Sheet1!B6", valueInputOption="USER_ENTERED", body={"values": [[data["Tax Provision (Latest Year)"]]]}).execute()
+        sheets.values().update(spreadsheetId=SPREADSHEET_ID, range="Sheet1!B7", valueInputOption="USER_ENTERED", body={"values": [[data["Pretax Income (Latest Year)"]]]}).execute()
+        sheets.values().update(spreadsheetId=SPREADSHEET_ID, range="Sheet1!B9", valueInputOption="USER_ENTERED", body={"values": [[data["Treasury Yield"]]]}).execute()
+        sheets.values().update(spreadsheetId=SPREADSHEET_ID, range="Sheet1!B10", valueInputOption="USER_ENTERED", body={"values": [[data["Beta"]]]}).execute()
+        sheets.values().update(spreadsheetId=SPREADSHEET_ID, range="Sheet1!B13", valueInputOption="USER_ENTERED", body={"values": [[data["Market Capitalization"]]]}).execute()
+        sheets.values().update(spreadsheetId=SPREADSHEET_ID, range="Sheet1!C17", valueInputOption="USER_ENTERED", body={"values": [[data["Shares Outstanding"]]]}).execute()
+        sheets.values().update(spreadsheetId=SPREADSHEET_ID, range="Sheet1!D3", valueInputOption="USER_ENTERED", body={"values": [[data["Last 4 Years of Free Cash Flow"][3]]]}).execute()
+        sheets.values().update(spreadsheetId=SPREADSHEET_ID, range="Sheet1!D4", valueInputOption="USER_ENTERED", body={"values": [[data["Last 4 Years of Free Cash Flow"][2]]]}).execute()
+        sheets.values().update(spreadsheetId=SPREADSHEET_ID, range="Sheet1!D5", valueInputOption="USER_ENTERED", body={"values": [[data["Last 4 Years of Free Cash Flow"][1]]]}).execute()
+        sheets.values().update(spreadsheetId=SPREADSHEET_ID, range="Sheet1!D6", valueInputOption="USER_ENTERED", body={"values": [[data["Last 4 Years of Free Cash Flow"][0]]]}).execute()
+        sheets.values().update(spreadsheetId=SPREADSHEET_ID, range="Sheet1!C20", valueInputOption="USER_ENTERED", body={"values": [[data["Current Price"]]]}).execute()
 
     except HttpError as error:
         print(f"An error occurred: {error}")
@@ -92,7 +93,7 @@ def get_financial_data(ticker):
 
     time.sleep(5)  # You can use WebDriverWait for a more robust solution
 
-    # Use the provided XPath to extract the Treasury Yield
+    # Use XPath to extract the Treasury Yield
     try:
         treasury_yield = driver.find_element(By.XPATH, '//*[@id="nimbus-app"]/section/section/section/article/section[1]/div[2]/div[1]/section/div/section/div[1]/fin-streamer[1]').text
         treasury_yield = float(treasury_yield)/100
