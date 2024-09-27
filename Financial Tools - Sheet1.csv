@@ -1,0 +1,21 @@
+Company Ticker,AAPL,,
+WACC,,DCF,
+Interest Expense,"$3,933,000,000.00",Cash Flow 2020,"$73,365,000,000.00"
+Total Debt,"$123,930,000,000.00",Cash Flow 2021,"$92,953,000,000.00"
+Cost of Debt,3.17%,Cash Flow 2022,"$111,443,000,000.00"
+Tax Provision,"$16,741,000,000.00",Cash Flow 2023,"$99,584,000,000.00"
+Pretax Income,"$113,736,000,000.00",3 Year CAGR,10.72%
+Cost of Debt * (1-t),2.71%,Discounted Cash Flow 2024,"$97,064,162,644.96"
+Treasury Yield,3.73%,Discounted Cash Flow 2025,"$107,471,289,686.50"
+Beta,1.24,Discounted Cash Flow 2026,"$118,994,258,974.09"
+Market Return,12%,Discounted Cash Flow 2027,"$131,752,710,050.26"
+Cost of Equity,13.99%,Terminal Value,"$1,243,383,597,139.62"
+Market Capitalization,"$3,469,575,716,864.00",,
+WACC,13.60%,Perpetual Growth,3.00%
+,,,
+,DCF,"$1,698,666,018,495.44",
+,Shares Outstanding,"$15,204,100,096.00",
+,,,
+,Intrinsic Value,$111.72,
+,Current Share Price,$229.97,
+,Margin of Safety,-118.25%,
