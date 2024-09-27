@@ -193,7 +193,7 @@ https://github.com/yourusername/IntrinsicValueAutomation
 
 ## Contributing
 
-1. Fork the repository (https://github.com/yourusername/IntrinsicValueAutomation/fork)
+1. Fork the repository (https://github.com/bhargava21/IntrinsicValueAutomation/fork)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
