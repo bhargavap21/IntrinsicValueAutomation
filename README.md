@@ -4,14 +4,8 @@ A powerful tool that automates real-time financial data collection and analysis 
 
 **IntrinsicValueAutomation** is a Python tool that automates financial data retrieval from Yahoo Finance using web scraping data using Selenium and the finance API. It calculates and updates stock metrics, including intrinsic value data, directly into Google Sheets.
 
-<div>
-    <a href="https://www.loom.com/share/cd37a13e13bd4db0850a05eca65b2451">
-      <p></p>
-    </a>
-    <a href="https://www.loom.com/share/cd37a13e13bd4db0850a05eca65b2451">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/cd37a13e13bd4db0850a05eca65b2451-21b0aba35300b0b7-full-play.gif">
-    </a>
-  </div>
+![IntrinsicValueAutomationSpreadsheet-BhargavaPerumalla-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/42c90b8b-5830-4485-bc43-4e26be8f52dc)
+
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
