@@ -150,17 +150,9 @@ pip install selenium
 ## Sample Request Flow
 
 1. **Fetching Financial Data**: The tool fetches data from Yahoo Finance using the `yfinance` library.
-2. **Scraping Treasury Yield**: Selenium scrapes the Treasury Yield from finance websites, and the data is formatted and displayed.
+2. **Scraping Treasury Yield**: Selenium dynamically web scrapes the current 10 Year Treasury Yield , and the data is formatted and displayed.
 3. **Google Sheets Update**: All fetched data is pushed directly to the linked Google Sheet.
 
-## Sample Selenium Code for Scraping
-
-```python
-driver = webdriver.Chrome()
-driver.get(f"https://finance.yahoo.com/quote/%5ETNX/")
-treasury_yield = driver.find_element(By.XPATH, 'xpath_to_element').text
-driver.quit()
-```
 
 ## Disclaimer
 
@@ -172,13 +164,6 @@ source env/bin/activate
 pip install intrinsicvalueautomation
 ```
 
-## IO Redirection
-
-Save program output for later analysis:
-
-```sh
-python intrinsicvalueautomation.py > output.log 2>&1
-```
 
 ## Development Setup
 
@@ -198,7 +183,7 @@ https://github.com/yourusername/IntrinsicValueAutomation
 
 ## Contributing
 
-1. Fork the repository (https://github.com/bhargava21/IntrinsicValueAutomation/fork)
+1. Fork the repository 
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
