@@ -107,7 +107,7 @@ IntrinsicValueAutomation uses a specific Google Sheets structure to organize and
 - **Cash Flow Visualization**: A chart showing historical and projected cash flows
 
 ### Access the Template:
-You can view and copy our [template Google Sheet here](https://docs.google.com/spreadsheets/d/1Y-_X0Hl2Ij7_FYc2Ai64AbhP002Oz9MfKVfxXjuHo7c/edit?usp=sharing).
+You can view and copy my [template Google Sheet here](https://docs.google.com/spreadsheets/d/1Y-_X0Hl2Ij7_FYc2Ai64AbhP002Oz9MfKVfxXjuHo7c/edit?usp=sharing).
 
 ### CSV Version:
 For those who prefer working with raw data, we've included a [CSV version of the template](./template_spreadsheet.csv) in this repository.
@@ -179,8 +179,7 @@ pip install -r requirements.txt
 
 Distributed under the MIT license. See `LICENSE` for more information.
 
-https://github.com/yourusername/IntrinsicValueAutomation
-
+[https://github.com/bhargavap21/IntrinsicValueAutomation]
 ## Contributing
 
 1. Fork the repository 
